@@ -1,12 +1,310 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aion Crafting Calculator</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Aion 2 Tools Hub | Crafting Calculator, Map, Database, Simulators</title>
+    <meta name="description" content="All Aion 2 tools in one place: Crafting Calculator, Interactive Map, Full Database, Character Build Simulator, Daevanion Simulator and more.">
+    <meta name="keywords" content="Aion 2, crafting calculator, interactive map, database, build simulator, daevanion simulator, gaming tools, MMORPG">
+    <meta name="author" content="Grachy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Aion 2 Tools Hub">
+    <meta property="og:description" content="All tools for Aion 2 players: crafting, map, database, simulators.">
+    <meta property="og:url" content="https://grachy.github.io/aion2-craft/">
+    <meta property="og:type" content="website">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://aion2.app">
+    
+    <!-- Redirect notice: this page exists for SEO and GitHub Pages trust flow -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0f1a 0%, #0c1220 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.85rem;
+            color: #ffd966;
+            margin-top: 0.5rem;
+        }
+
+        .header p {
+            color: #94a3b8;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .main-link {
+            margin-top: 1.5rem;
+        }
+
+        .main-link a {
+            background: #ff8c00;
+            color: #0a0f1a;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+        }
+
+        .main-link a:hover {
+            background: #ffaa33;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .tool-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 1.5rem;
+            padding: 1.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 140, 0, 0.4);
+            background: rgba(20, 30, 55, 0.8);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #ffd966;
+        }
+
+        .tool-card p {
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 140, 0, 0.15);
+            color: #ffb347;
+            padding: 0.5rem 1.25rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+        }
+
+        .tool-link:hover {
+            background: rgba(255, 140, 0, 0.3);
+            color: #ffcc77;
+        }
+
+        /* Coming soon */
+        .coming-soon {
+            opacity: 0.7;
+        }
+
+        .coming-soon .tool-link {
+            background: rgba(100, 100, 100, 0.2);
+            border-color: rgba(100, 100, 100, 0.3);
+            color: #94a3b8;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* Info section */
+        .info-section {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-section a {
+            color: #ffb347;
+            text-decoration: none;
+        }
+
+        .info-section a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border-color: rgba(255, 255, 255, 0.05);
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 700px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⚔️ Aion 2 Tools Hub</h1>
+            <div class="badge">GitHub Pages → Trust flow to aion2.app</div>
+            <p>All tools for Aion 2 players in one place: calculators, maps, database, simulators</p>
+            <div class="main-link">
+                <a href="https://aion2.app" target="_blank" rel="noopener noreferrer">
+                    🏠 Go to Main Website aion2.app →
+                </a>
+            </div>
+        </div>
+
+        <!-- Tools Grid -->
+        <div class="tools-grid">
+            <!-- Crafting Calculator -->
+            <div class="tool-card">
+                <div class="tool-icon">🛠️</div>
+                <h2>Crafting Calculator</h2>
+                <p>Calculate exact materials, discover recipes, plan your crafting routes. Never waste resources again.</p>
+                <a href="https://aion2.app/crafting" class="tool-link" target="_blank" rel="noopener noreferrer">
+                    Open Calculator →
+                </a>
+            </div>
+
+            <!-- Interactive Map -->
+            <div class="tool-card">
+                <div class="tool-icon">🗺️</div>
+                <h2>Interactive Map</h2>
+                <p>Monster locations, gathering nodes, NPCs, dungeons entrances. Full interactive world map.</p>
+                <a href="https://aion2.app/map?zone=World_L_A" class="tool-link" target="_blank" rel="noopener noreferrer">
+                    Open Map →
+                </a>
+            </div>
+
+            <!-- Full Database -->
+            <div class="tool-card">
+                <div class="tool-icon">📚</div>
+                <h2>Full Database</h2>
+                <p>All items, gear, titles, quests, achievements, dungeons, skills and more. Search & filter.</p>
+                <a href="https://aion2.app/database?type=item" class="tool-link" target="_blank" rel="noopener noreferrer">
+                    Open Database →
+                </a>
+            </div>
+
+            <!-- Character Build Simulator -->
+            <div class="tool-card">
+                <div class="tool-icon">⚙️</div>
+                <h2>Build Simulator</h2>
+                <p>Plan your character build, share it with others, compare stats, optimize your setup.</p>
+                <a href="https://aion2.app/simulator" class="tool-link" target="_blank" rel="noopener noreferrer">
+                    Open Simulator →
+                </a>
+            </div>
+
+            <!-- Daevanion Simulator -->
+            <div class="tool-card">
+                <div class="tool-icon">🔮</div>
+                <h2>Daevanion Simulator</h2>
+                <p>Plan your node opening path. Save time and avoid mistakes with the Daevanion system.</p>
+                <a href="https://aion2.app/daevanion" class="tool-link" target="_blank" rel="noopener noreferrer">
+                    Open Simulator →
+                </a>
+            </div>
+
+            <!-- More incoming (placeholder) -->
+            <div class="tool-card coming-soon">
+                <div class="tool-icon">✨</div>
+                <h2>More Tools</h2>
+                <p>Guild calculator, auction house tracker, DPS meter, party builder and many more coming soon.</p>
+                <span class="tool-link">🚧 In development</span>
+            </div>
+        </div>
+
+        <!-- SEO & Trust Info -->
+        <div class="info-section">
+            <p>
+                🎮 <strong>Aion 2 Tools</strong> — crafted by and for the community.<br>
+                This page exists on <strong>GitHub Pages</strong> to provide trusted backlinks to 
+                <a href="https://aion2.app" target="_blank">aion2.app</a> and all its tools.
+            </p>
+            <hr>
+            <p>
+                📌 <strong>Direct links to all tools:</strong><br>
+                <a href="https://aion2.app/crafting">Crafting Calculator</a> • 
+                <a href="https://aion2.app/map?zone=World_L_A">Interactive Map</a> • 
+                <a href="https://aion2.app/database?type=item">Database</a> • 
+                <a href="https://aion2.app/simulator">Build Simulator</a> • 
+                <a href="https://aion2.app/daevanion">Daevanion Simulator</a>
+            </p>
+            <p style="margin-top: 0.75rem; font-size: 0.8rem;">
+                Aion 2 is a trademark of NCSOFT. This site is not officially affiliated.
+            </p>
+        </div>
+    </div>
+
+    <!-- Optional: small redirect note in console (not intrusive) -->
+    <script>
+        // Just for transparency – no automatic redirect, only manual links.
+        console.log("Aion 2 Tools Hub | All tools available at aion2.app");
+    </script>
+</body>
 </html>
