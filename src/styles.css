@@ -1,0 +1,59 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #e5e7eb;
+  background: #0f172a;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: linear-gradient(180deg, #0f172a 0%, #111827 100%); }
+input, select {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0b1220;
+  color: #e5e7eb;
+  padding: 10px 12px;
+}
+
+.layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px 80px;
+}
+
+.hero { margin-bottom: 24px; }
+.eyebrow { color: #93c5fd; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+h1 { margin: 0 0 8px; font-size: 40px; }
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+.controls, .summary-grid { display: grid; gap: 16px; }
+.controls { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 20px; }
+.summary-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin-bottom: 20px; }
+.metric span { display: block; color: #94a3b8; margin-bottom: 8px; }
+.metric strong { font-size: 28px; }
+.field { display: grid; gap: 8px; }
+.price-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.tree-root, .tree-root ul { list-style: none; padding-left: 16px; }
+.tree-node {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 8px;
+  padding: 8px 0;
+  align-items: center;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.badge.market { background: #1d4ed8; }
+.badge.crafted { background: #7c3aed; }
