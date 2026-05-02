@@ -2,9 +2,9 @@
 
 > **The ultimate crafting tool for Aion 2** – optimize resources, discover recipes, and never waste materials again.
 
-[![Website](https://img.shields.io/badge/Website-aion2.app-blue?style=flat-square)](https://aion2.app/crafting)
+[![Website](https://img.shields.io/badge/Website-aion2t.com-blue?style=flat-square)](https://aion2t.com/crafting)
 [![GitHub](https://img.shields.io/badge/GitHub-Grachy%2Faion2--craft-black?style=flat-square)](https://github.com/Grachy/aion2-craft)
-[![Aion 2](https://img.shields.io/badge/Aion-2-orange?style=flat-square)](https://aion2.app)
+[![Aion 2](https://img.shields.io/badge/Aion-2-orange?style=flat-square)](https://aion2t.com)
 
 ---
 
@@ -14,7 +14,7 @@
 
 Whether you're a beginner or a veteran crafter, this tool saves you hours of manual calculations and prevents costly mistakes.
 
-🔗 **Live version:** [https://aion2.app/crafting](https://aion2.app/crafting)
+🔗 **Live version:** [https://aion2t.com/crafting](https://aion2t.com/crafting)
 
 ---
 
@@ -50,10 +50,9 @@ This calculator is part of a larger ecosystem of tools for **Aion 2** players:
 
 | Tool | Description | Link |
 |------|-------------|------|
-| 🗺️ **Interactive Map** | Monster locations, nodes, NPCs | [aion2.app/map](https://aion2.app/map?zone=World_L_A) |
-| 📚 **Full Database** | Items, gear, titles, quests, dungeons | [aion2.app/database](https://aion2.app/database?type=item) |
-| ⚔️ **Build Simulator** | Plan and share character builds | [aion2.app/simulator](https://aion2.app/simulator) |
-| 🔮 **Daevanion Simulator** | Node opening planner (no wasted time) | [aion2.app/daevanion](https://aion2.app/daevanion) |
+| 🗺️ **Interactive Map** | Monster locations, nodes, NPCs | [aion2t.com/map](https://aion2t.com/map?zone=World_L_A) |
+| ⚔️ **Build Simulator** | Plan and share character builds | [aion2t.com/simulator](https://aion2t.com/simulator) |
+| 🔮 **Daevanion Simulator** | Node opening planner (no wasted time) | [aion2t.com/daevanion](https://aion2t.com/daevanion) |
 
 > 🚧 **More tools coming soon!** Stay tuned.
 
@@ -63,7 +62,7 @@ This calculator is part of a larger ecosystem of tools for **Aion 2** players:
 
 - **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
 - **Data:** JSON-based recipe database
-- **Hosting:** [aion2.app](https://aion2.app)
+- **Hosting:** [aion2t.com](https://aion2t.com)
 
 ---
 
@@ -91,12 +90,11 @@ Feel free to open an **Issue** or submit a **Pull Request**.
 
 ## 📬 Contact & Links
 
-- 🌐 Main website: [https://aion2.app](https://aion2.app)
-- 🧪 Crafting calculator: [https://aion2.app/crafting](https://aion2.app/crafting)
-- 🗺️ Monster map: [https://aion2.app/map?zone=World_L_A](https://aion2.app/map?zone=World_L_A)
-- 📖 Database: [https://aion2.app/database?type=item](https://aion2.app/database?type=item)
-- ⚙️ Build simulator: [https://aion2.app/simulator](https://aion2.app/simulator)
-- 🔮 Daevanion simulator: [https://aion2.app/daevanion](https://aion2.app/daevanion)
+- 🌐 Main website: [https://aion2t.com](https://aion2t.com)
+- 🧪 Crafting calculator: [https://aion2t.com/crafting](https://aion2t.com/crafting)
+- 🗺️ Monster map: [https://aion2t.com/map?zone=World_L_A](https://aion2t.com/map?zone=World_L_A)
+- ⚙️ Build simulator: [https://aion2t.com/simulator](https://aion2t.com/simulator)
+- 🔮 Daevanion simulator: [https://aion2t.com/daevanion](https://aion2t.com/daevanion)
 
 ---
 
